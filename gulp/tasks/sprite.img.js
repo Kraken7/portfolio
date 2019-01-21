@@ -2,7 +2,7 @@
 
 module.exports = function() {
   $.gulp.task('sprite:img', function() {
-    var spriteData = $.gulp.src('./source/sprite/*.{png,jpg}')
+    var spriteData = $.gulp.src('./source/assets/sprite/*.{png,jpg}')
       .pipe($.gp.spritesmith({
           imgName: 'sprite.png',
           cssName: 'sprite.scss',
@@ -12,7 +12,7 @@ module.exports = function() {
             sprite.name = 's-' + sprite.name
           }
       }));
-      spriteData.img.pipe($.gulp.dest($.config.root + '/assets/img'));
-      spriteData.css.pipe($.gulp.dest($.config.root + '/assets/img'));
+      spriteData.img.pipe($.gulp.dest($.config.root + '/img/sprite'));
+      return spriteData.css.pipe($.gulp.dest($.config.root + '/img/sprite'));
   })
 };

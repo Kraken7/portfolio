@@ -26,13 +26,15 @@ $.gulp.task('build', $.gulp.series(
   $.gulp.parallel(
     'sass',
     //'less',
-    //'sprite:img',
     'pug',
-    'js:foundation',
-    'js:process',
-    'copy',
+    //'js:foundation',
+    //'js:process',
+    'copy:img',
+    'copy:fonts',
+    'copy:files',
     'css:foundation',
-    'sprite:svg'
+    'sprite:svg',
+    'sprite:img'
   )
 ));
 
@@ -50,6 +52,6 @@ $.gulp.task('prod', $.gulp.series(
   'build',
   //'tinypng',
   //'zip',
-  'sftp',
+  //'sftp',
   'size'
 ));
