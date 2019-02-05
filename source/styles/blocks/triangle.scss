@@ -1,0 +1,13 @@
+.triangle{
+  transform: translateY(-99.6%);
+  position: absolute;
+  z-index: 1;
+  &_fill{
+    &_beige{
+      fill: $beige;
+    }
+    &_white{
+      fill: $white;
+    }
+  }
+}

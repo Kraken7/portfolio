@@ -25,3 +25,20 @@
     clear: both;
   }
 }
+
+@mixin center($p:'all'){
+  position: absolute;
+  @if($p == 'x'){
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if($p == 'y'){
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if($p == 'all'){
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

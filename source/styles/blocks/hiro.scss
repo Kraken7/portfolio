@@ -1,0 +1,34 @@
+.hiro{
+  background: url("../img/hiro_bg.png") no-repeat top center;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+.hiro__bg{
+  @include center();
+  width: 90%;
+}
+.hiro__bg-img{
+  width: 100%;
+}
+.hiro__hamburger{
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+.hiro__down-arrow{
+  @include center('x');
+  bottom: 50px;
+
+}
+.hiro__down-arrow-icon{
+
+}
+.hiro__user-block{
+  @include center();
+}
+.hiro__soc-icons{
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}

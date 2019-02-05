@@ -3,7 +3,7 @@
 global.$ = {
   package: require('./package.json'),
   config: require('./gulp/config'),
-  configFTP: require('./config.ftp.js'),
+  //configFTP: require('./config.ftp.js'),
   path: {
     task: require('./gulp/paths/tasks.js'),
     jsFoundation: require('./gulp/paths/js.foundation.js'),
@@ -27,8 +27,8 @@ $.gulp.task('build', $.gulp.series(
     'sass',
     //'less',
     'pug',
-    //'js:foundation',
-    //'js:process',
+    'js:foundation',
+    'js:process',
     'copy:img',
     'copy:fonts',
     'copy:files',
@@ -49,9 +49,10 @@ $.gulp.task('default', $.gulp.series(
 ));
 
 $.gulp.task('prod', $.gulp.series(
+  'clean-zip',
   'build',
   //'tinypng',
-  //'zip',
+  'zip',
   //'sftp',
   'size'
 ));

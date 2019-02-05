@@ -1,5 +1,38 @@
-.about__triangles {
-  position: absolute;
-  bottom: 100%;
-}
+.about{
 
+}
+.about__wrap{
+  display: flex;
+}
+.about__left{
+  flex: 1;
+  position: relative;
+  background: $beige;
+}
+.about__right{
+  flex: 1;
+  position: relative;
+  background: $white;
+}
+.about__section-title{
+  color: #373e42;
+  /*font-family: SansusWebissimo;*/
+  font-size: 63px;
+  font-weight: 400;
+  line-height: 66px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 30px;
+  &:after{
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: #373e42;
+  }
+}
+.about__triangles{
+
+}

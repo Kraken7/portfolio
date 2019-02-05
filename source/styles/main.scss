@@ -1,10 +1,12 @@
 // переменные
-
-//layout setups
-@import "layout/setups";
-@import "layout/fonts";
+$white: #f4f5f0;
+$beige: #ebefe2;
 
 //mixins
 @import "helpers/mixins";
+
+//layout setups
+@import "layout/fonts";
+@import "layout/setups";
 
 @import "blocks/**/*";

@@ -6,39 +6,45 @@ block title
 block content
   section.section.hiro
 
-    ul.soc-icons
-      each item in ['vk', 'gh', 'in']
+    ul.soc-icons.hiro__soc-icons
+      each item in ['vk', 'github', 'in']
         li.soc-icons__item
-          a(href='' target='_blank' class=`soc-icons__link soc-icons__link_${item}`)
+          a(href="#" target='_blank').soc-icons__link
+            svg.soc-icons__icon(width="24" height="24")
+              use(xlink:href=`img/sprite/sprite.svg#${item}`)
 
-    a(href='').hamburger
+    a(href="#").hiro__hamburger
+      svg.hiro__hamburger-icon(width="40" height="40")
+        use(xlink:href=`img/sprite/sprite.svg#hamburger`)
 
-    .hero__bg
-      img.hero__bg-img(src='img/bg/portfolio.jpg' alt='')
+    .hiro__bg
+      img.hiro__bg-img(src='../img/portfolio_header.png' alt='')
 
-    a(href="").down-arrow
-      img(src="img/icons/arrow_down.svg", alt="").down-arrow__icon
+    a(href="#").hiro__down-arrow
+      svg.hiro__hamburger-icon(width="30" height="30")
+        use(xlink:href=`img/sprite/sprite.svg#arrow_down`)
 
-    .user.hero__user-block
-      img.section-title(src='img/decor/portfolio-header.png' alt='')
-      .user-title__block
-        img.user__avatar(src="img/content/user.jpg", alt="")
+    .user.hiro__user-block
+      .user__block
+        img.user__avatar(src="img/user.png", alt="")
         h1.user__name Владимир Астахов
         p.user__text Личный сайт веб-разработчика
 
-    section.section.about
+  section.section.about
+    .wrapper.about__wrap
       .about__left
 
         svg(
-          viewbox="0 0 1000 100"
+          viewbox="0 0 1000 200"
           preserveAspectRatio="none"
           class="triangle triangle_fill_beige about__triangles")
-          polygon(points="0,0 0,100 1000,100")
+          polygon(points="0,0 0,200 1000,200")
 
         +title('Обо мне', 'about-header.png', 'about__section-title')
 
         .user-about
           .user-about__picture
+            img(src="img/man.png" alt="").user-about__picture-img
           .user-about__title
             | Кто я
           .user-about__text
@@ -48,10 +54,10 @@ block content
       .about__right
 
         svg(
-          viewbox="0 0 1000 100"
+          viewbox="0 0 1000 200"
           preserveAspectRatio="none"
-          class="triangle triangle_fill_beige about__triangles")
-          polygon(points="0,100 1000,100 1000,0")
+          class="triangle triangle_fill_white about__triangles")
+          polygon(points="0,200 1000,200 1000,0")
 
         .user-data
           .user-data__title Чем я могу быть вам полезен
@@ -59,28 +65,107 @@ block content
             p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 
         .user-skills
+          .user-skills__block
+            h2.user-skills__h2 Frontend
+            .user-skills__items
+              .user-skills__item
+                .user-skills__item-title HTML5
+                svg(
+                  class="user-skills__item-circle"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100")
+                  circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                  circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+              .user-skills__item
+                .user-skills__item-title CSS3
+                svg(
+                class="user-skills__item-circle"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100")
+                  circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                  circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+              .user-skills__item
+                .user-skills__item-title JavaScript & jQuery
+                svg(
+                class="user-skills__item-circle"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100")
+                  circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                  circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+          .user-skills__block
+            h2.user-skills__h2 Backend
+              .user-skills__items
+                .user-skills__item
+                  .user-skills__item-title PHP
+                  svg(
+                  class="user-skills__item-circle"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+                .user-skills__item
+                  .user-skills__item-title mySQL
+                  svg(
+                  class="user-skills__item-circle"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+                .user-skills__item
+                  .user-skills__item-title Node.js & npm
+                  svg(
+                  class="user-skills__item-circle"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+                .user-skills__item
+                  .user-skills__item-title Mongo.db
+                  svg(
+                  class="user-skills__item-circle"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
 
-    section.section.map
-      .map-block
-        .map-block__title Контакты
-        ul.map-block__contacts
-          each item, ndx in {'skype':'skype_kdn','email':'astanov@gmail.ru','phone':'+7 931 200 93 24','geo':'Новосибирск, ул. Инская, д. 14'}
-              li(class=`map-block__contacts-item map-block__contacts-item_${ndx}`)= item
+          .user-skills__block
+            h2.user-skills__h2 WorkFlow
+              .user-skills__items
+                .user-skills__item
+                  .user-skills__item-title Git
+                  svg(
+                  class="user-skills__item-circle"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+                .user-skills__item
+                  .user-skills__item-title Gulp
+                  svg(
+                  class="user-skills__item-circle"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+                .user-skills__item
+                  .user-skills__item-title Bower
+                  svg(
+                  class="user-skills__item-circle"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
 
-    footer.section.footer
-      .footer__blocks
-        .footer__blocks.footer__blocks_left
-          p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
-        .footer__blocks.footer__blocks_middle
-          ul.footer__nav
-            each item, ndx in {'/portfolio.html':'Мои работы', '/about.html':'Обо мне', '/blog.html':'Блог', '/auth.html':'Авторизация'}
-              li.footer__nav-item
-                a(href=`${ndx}`).footer__nav-link= item
-          ul.soc-icons
-            each item in ['vk', 'gh', 'in']
-              li.soc-icons__item
-                a(href='' target='_blank' class=`soc-icons__link soc-icons__link_${item}`)
-        .footer__blocks.footer__blocks_right
-          p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете. — Martin Golding
-      .footer__copy
-        | © Владимир Астахов | Создано с любовью в LoftSchool | 2016
+  include ../parts/map
+
+  include ../parts/footer

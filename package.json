@@ -30,6 +30,7 @@
     "vinyl-ftp": "^0.6.1"
   },
   "dependencies": {
+    "gulp-css-unit": "^1.2.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass-glob": "^1.0.9",
     "jquery": "~3.2.1",

@@ -1,0 +1,38 @@
+.user-about{
+  padding: 0 80px 30px 80px;
+}
+.user-about__picture{
+  width: 100%;
+  margin: 20px auto;
+}
+.user-about__picture-img{
+  width: 100%;
+}
+.user-about__title{
+  color: #566358;
+  /*font-family: SansusWebissimo;*/
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 41px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+  &:after{
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: #373e42;
+  }
+}
+.user-about__text{
+  color: #566358;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  p{
+    margin: 10px 0;
+  }
+}
