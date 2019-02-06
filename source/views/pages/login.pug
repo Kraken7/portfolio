@@ -1,0 +1,36 @@
+extends ../main-layout
+
+block title
+  | Войти
+
+block content
+  section.section.welcome
+    .welcome__canvas
+      h1.welcome__title АВТОРИЗУЙТЕСЬ
+      form.welcome__form(action="" method="")
+        .welcome__form-wrap
+          input.welcome__form-login(type="text" name="login" placeholder="Логин")
+          input.welcome__form-pass(type="password" name="pass" placeholder="Пароль")
+
+          .welcome__form-capcha
+            .welcome__form-capcha-checkbox
+            input.welcome__form-capcha-checkbox-input(type="checkbox" name="capcha-1" value="1")
+            p.welcome__form-capcha-p Я человек
+
+          .welcome__form-p Вы точно не робот?
+          .welcome__form-capcha-2
+            .welcome__form-capcha-radio-block
+              .welcome__form-capcha-radio
+              input.welcome__form-capcha-radio-input(type="radio" name="capcha-2" value="1")
+              p.welcome__form-capcha-p Да
+            .welcome__form-capcha-radio-block
+              .welcome__form-capcha-radio
+              input.welcome__form-capcha-radio-input(type="radio" name="capcha-2" value="0")
+              p.welcome__form-capcha-p Не уверен
+
+        .welcome__buttons
+          a.welcome__btn(href="/") На главную
+          input.welcome__btn(type="submit" value="Войти")
+
+    .welcome__copy
+      | © Владимир Астахов | создано с любовью в LoftSchool | 2016

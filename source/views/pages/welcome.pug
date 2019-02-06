@@ -1,0 +1,30 @@
+extends ../main-layout
+
+block title
+  | Добро пожаловать
+
+block content
+  section.section.welcome
+    .welcome__canvas
+      .user.welcome__user-block
+        .user__block
+          img.user__avatar(src="img/user.png", alt="")
+          h1.user__name Владимир Астахов
+          p.user__text Личный сайт веб-разработчика
+
+      ul.soc-icons.welcome__soc-icons
+        each item in ['vk', 'github', 'in']
+          li.soc-icons__item
+            a(href="#" target='_blank').soc-icons__link
+              svg.soc-icons__icon(width="24" height="24")
+                use(xlink:href=`img/sprite/sprite.svg#${item}`)
+
+      .welcome__buttons
+        a.welcome__btn(href="#") Мои работы
+        a.welcome__btn(href="#") Обо мне
+        a.welcome__btn(href="#") Блог
+
+    a.welcome__login(href="#") Авторизоваться
+
+    .welcome__copy
+      | © Владимир Астахов | создано с любовью в LoftSchool | 2016
