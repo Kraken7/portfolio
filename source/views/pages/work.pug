@@ -1,0 +1,113 @@
+extends ../main-layout
+
+block title
+  | Главная Страница
+
+block content
+  section.section.hiro
+
+    ul.soc-icons.hiro__soc-icons
+      each item in ['vk', 'github', 'in']
+        li.soc-icons__item
+          a(href="#" target='_blank').soc-icons__link
+            svg.soc-icons__icon(width="24" height="24")
+              use(xlink:href=`img/sprite/sprite.svg#${item}`)
+
+    a(href="#").hiro__hamburger
+      svg.hiro__hamburger-icon(width="40" height="40")
+        use(xlink:href=`img/sprite/sprite.svg#hamburger`)
+
+    .hiro__bg
+      img.hiro__bg-img(src='../img/portfolio_header.png' alt='')
+
+    a(href="#").hiro__down-arrow
+      svg.hiro__hamburger-icon(width="30" height="30")
+        use(xlink:href=`img/sprite/sprite.svg#arrow_down`)
+
+    .user.hiro__user-block
+      .user__block
+        img.user__avatar(src="img/user.png", alt="")
+        h1.user__name Владимир Астахов
+        p.user__text Личный сайт веб-разработчика
+
+  section.section.sec-triangle
+    .sec-triangle__col
+      svg(
+      viewbox="0 0 1000 200"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_white about__triangles")
+        polygon(points="0,0 0,200 1000,200")
+    .sec-triangle__col
+      svg(
+      viewbox="0 0 1000 200"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_white about__triangles")
+        polygon(points="0,200 1000,200 1000,0")
+
+  section.section.my-works
+    h2.title.my-works__title Мои работы
+    .my-works__wrap
+      .my-works__col.my-works__col_1
+        .my-works__desk
+          h3.title-2.my-works__title-2 Сайт школы онлайн Образования
+          p.my-works__teh HTML, CSS, JAVASCRIPT
+          a.my-works__link(href="" target="_blank")
+            svg.my-works__link-icon(width="20" height="20")
+              use(xlink:href=`img/sprite/sprite.svg#link`)
+            p.my-works__link-p Посмотреть сайт
+
+      .my-works__col.my-works__col_2
+        .my-works__main
+          img.my-works__img(src="userfiles/site-1.png" alt="")
+
+        .my-works__prev
+          .my-works__left
+            img.my-works__img(src="userfiles/site-2.png" alt="")
+            .my-works__bg
+            .my-works__img-icon-link
+              svg.my-works__img-icon(width="50" height="50")
+                use(xlink:href=`img/sprite/sprite.svg#arrow_down`)
+
+          .my-works__right
+            img.my-works__img(src="userfiles/site-3.png" alt="")
+            .my-works__bg
+            .my-works__img-icon-link
+              svg.my-works__img-icon(width="50" height="50" style="transform: rotate(180deg);")
+                use(xlink:href=`img/sprite/sprite.svg#arrow_down`)
+
+  section.section.reviews-section
+    .reviews-section__list-1
+    .reviews-section__list-2
+    .reviews-section__list-3
+    .wrapper
+      h2.title.reviews-section__title Что обо мне говорят
+      .reviews.reviews-section__list
+        .reviews__item
+          img.reviews__item-img(src="img/rev-1.png" alt="")
+          .reviews__item-content
+            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          .reviews__item-author
+            p.reviews__item-author-1 Ковальчук Дмитрий
+            p.reviews__item-author-2 — основатель Loftschool
+
+        .reviews__item
+          img.reviews__item-img(src="img/rev-2.png" alt="")
+          .reviews__item-content
+            p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+          .reviews__item-author
+            p.reviews__item-author-1 Сабанцев Владимир
+            p.reviews__item-author-2 — преподаватель
+
+      .form-commun.reviews-section__form
+        .title-2.form-commun__title-2 СВЯЗАТЬСЯ СО МНОЙ
+        form.form-commun__form(action="" method="")
+          .form-commun__form-wrap
+            input.form-commun__name(type="text" name="name" placeholder="Имя")
+            input.form-commun__email(type="email" name="email" placeholder="Email")
+            textarea.form-commun__text(name="text" placeholder='Ваше сообщение')
+          .form-commun__buttons
+            input.form-commun__submit(type="submit" value="Отправить")
+            input.form-commun__reset(type="reset" value="Очистить")
+
+
+  include ../parts/footer

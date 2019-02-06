@@ -1,0 +1,36 @@
+.reviews{
+  display: flex;
+  justify-content: center;
+}
+.reviews__item{
+  flex: 1;
+  max-width: 400px;
+  margin: 10px;
+}
+.reviews__item-img{
+  margin: 0 auto;
+  display: block;
+}
+.reviews__item-content{
+  color: #5d5a55;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 26px;
+  p{
+
+  }
+}
+.reviews__item-author{
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  .reviews__item-author-1{
+    color: #4e8839;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .reviews__item-author-2{
+    color: #373e42;
+    font-style: italic;
+  }
+}
