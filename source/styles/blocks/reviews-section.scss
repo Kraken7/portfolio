@@ -8,6 +8,11 @@
   max-width: 600px;
   margin: 0 auto;
   padding-top: 50px;
+  &:before{
+    width: 499px;
+    height: 175px;
+    background: url("../img/about_header.png");
+  }
 }
 .reviews-section__list{
 

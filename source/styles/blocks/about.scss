@@ -15,7 +15,14 @@
   background: $white;
 }
 .about__section-title{
-
+  padding: 40px 0 0;
+  margin: 0 0 30px;
+  &:before{
+     width: 357px;
+     height: 125px;
+     background: url("../img/about_header.png");
+     background-size: cover;
+   }
 }
 .about__triangles{
 

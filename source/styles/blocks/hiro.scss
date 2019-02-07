@@ -15,11 +15,13 @@
   position: absolute;
   top: 40px;
   right: 40px;
+  @include svg-hover();
 }
 .hiro__down-arrow{
   @include center('x');
   bottom: 50px;
-
+  z-index: 2;
+  @include svg-hover(#c4cec2);
 }
 .hiro__down-arrow-icon{
 

@@ -42,3 +42,18 @@
     transform: translate(-50%, -50%);
   }
 }
+
+@mixin svg-hover($fill: #4e8839){
+  &:hover{
+    cursor: pointer;
+    svg{
+      use{
+        fill: $fill;
+      }
+    }
+  }
+}
+
+@mixin transition(){
+  transition: all 100ms ease;
+}

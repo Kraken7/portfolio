@@ -29,13 +29,13 @@ textarea{
 
 .title{
 	color: #373e42;
-	/*font-family: SansusWebissimo;*/
+	@include sansus();
 	font-size: 63px;
 	font-weight: 400;
-	line-height: 66px;
 	text-transform: uppercase;
 	text-align: center;
 	padding: 30px;
+	position: relative;
 	&:after{
 		content: '';
 		display: block;
@@ -45,14 +45,18 @@ textarea{
 		margin-top: 20px;
 		background: #373e42;
 	}
+	&:before{
+		content: "";
+		display: block;
+		@include center();
+	}
 }
 
 .title-2{
 	color: #566358;
-	/*font-family: SansusWebissimo;*/
+	@include sansus();
 	font-size: 35px;
 	font-weight: 400;
-	line-height: 41px;
 	text-transform: uppercase;
 	text-align: center;
 	margin-bottom: 20px;
@@ -64,6 +68,13 @@ textarea{
 		margin: 0 auto;
 		margin-top: 20px;
 		background: #373e42;
+	}
+}
+
+svg{
+	use{
+		@include transition();
+		fill: #fff;
 	}
 }
 

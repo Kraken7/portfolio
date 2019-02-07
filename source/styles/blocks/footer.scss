@@ -39,7 +39,10 @@
   margin-bottom: 20px;
 }
 .footer__nav-item{
-
+  @include transition();
+  &:hover{
+    color: #4e8839;
+  }
 }
 .footer__nav-link{
   color: inherit;

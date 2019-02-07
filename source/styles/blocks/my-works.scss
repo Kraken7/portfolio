@@ -2,7 +2,13 @@
   background: $white;
 }
 .my-works__title{
-
+  padding: 70px 0 20px;
+  margin: 0 0 20px;
+  &:before{
+    width: 506px;
+    height: 165px;
+    background: url("../img/works_header.png");
+  }
 }
 .my-works__wrap{
   display: flex;
@@ -12,16 +18,18 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 
   &_1{
     background: #ebefe2;
   }
   &_2{
     background: #e1e4d7;
+    flex-direction: column;
   }
 }
 .my-works__desk{
-
+  max-width: 530px;
 }
 .my-works__title-2{
 
@@ -43,6 +51,10 @@
   height: 45px;
   margin: 0 auto;
   border-radius: 30px;
+  @include transition();
+  &:hover{
+    background: #4e8839;
+  }
 }
 .my-works__link-icon{
   margin-right: 10px;
@@ -63,10 +75,12 @@
 .my-works__left{
   flex: 1;
   position: relative;
+  @include svg-hover(#c4cec2);
 }
 .my-works__right{
   flex: 1;
   position: relative;
+  @include svg-hover(#c4cec2);
 }
 .my-works__img{
   width: 100%;
