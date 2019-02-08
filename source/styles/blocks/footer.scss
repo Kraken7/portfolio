@@ -21,16 +21,18 @@
   strong{
 
   }
-  &_left{
+  &:nth-of-type(1), &:nth-of-type(2){
     border-right: 1px solid rgba(255,255,255,0.2);
   }
-  &_right{
+  &_1{
+
+  }
+  &_2{
+    font-weight: 500;
+  }
+  &_3{
     opacity: 0.5;
     font-style: italic;
-  }
-  &_middle{
-    font-weight: 500;
-    border-right: 1px solid rgba(255,255,255,0.2);
   }
 }
 .footer__nav{

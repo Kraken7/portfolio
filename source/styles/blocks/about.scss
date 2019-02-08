@@ -4,15 +4,15 @@
 .about__wrap{
   display: flex;
 }
-.about__left{
+.about__col{
   flex: 1;
   position: relative;
-  background: $beige;
-}
-.about__right{
-  flex: 1;
-  position: relative;
-  background: $white;
+  &_beige{
+    background: $beige;
+  }
+  &_white{
+    background: $white;
+  }
 }
 .about__section-title{
   padding: 40px 0 0;

@@ -1,12 +1,12 @@
 .map{
   background: url("../img/map.png") no-repeat center center;
   background-size: cover;
-  min-height: 977px;
+  min-height: 777px;
+  padding-bottom: 200px;
 }
 .map_wrap{
   display: flex;
-  /*height: 100%;*/
-  min-height: 977px;
+  min-height: 777px;
 }
 .map-block{
   width: 380px;

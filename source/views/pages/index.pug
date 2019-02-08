@@ -6,12 +6,7 @@ block title
 block content
   section.section.hiro
 
-    ul.soc-icons.hiro__soc-icons
-      each item in ['vk', 'github', 'in']
-        li.soc-icons__item
-          a(href="#" target='_blank').soc-icons__link
-            svg.soc-icons__icon(width="24" height="24")
-              use(xlink:href=`img/sprite/sprite.svg#${item}`)
+    +soc('hiro__soc-icons')
 
     a(href="#").hiro__hamburger
       svg.hiro__hamburger-icon(width="40" height="40")
@@ -21,7 +16,7 @@ block content
       img.hiro__bg-img(src='../img/portfolio_header.png' alt='')
 
     a(href="#").hiro__down-arrow
-      svg.hiro__hamburger-icon(width="30" height="30")
+      svg.hiro__down-arrow-icon(width="30" height="30")
         use(xlink:href=`img/sprite/sprite.svg#arrow_down`)
 
     .user.hiro__user-block
@@ -32,7 +27,7 @@ block content
 
   section.section.about
     .wrapper.about__wrap
-      .about__left
+      .about__col.about__col_beige
 
         svg(
           viewbox="0 0 1000 200"
@@ -51,7 +46,7 @@ block content
             p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
 
-      .about__right
+      .about__col.about__col_white
 
         svg(
           viewbox="0 0 1000 200"
@@ -65,107 +60,22 @@ block content
             p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 
         .user-skills
-          .user-skills__block
-            h2.user-skills__h2 Frontend
-            .user-skills__items
-              .user-skills__item
-                .user-skills__item-title HTML5
-                svg(
-                  class="user-skills__item-circle"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100")
-                  circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                  circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
-              .user-skills__item
-                .user-skills__item-title CSS3
-                svg(
-                class="user-skills__item-circle"
-                width="100"
-                height="100"
-                viewBox="0 0 100 100")
-                  circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                  circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
-              .user-skills__item
-                .user-skills__item-title JavaScript & jQuery
-                svg(
-                class="user-skills__item-circle"
-                width="100"
-                height="100"
-                viewBox="0 0 100 100")
-                  circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                  circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
-          .user-skills__block
-            h2.user-skills__h2 Backend
-              .user-skills__items
-                .user-skills__item
-                  .user-skills__item-title PHP
-                  svg(
-                  class="user-skills__item-circle"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
-                .user-skills__item
-                  .user-skills__item-title mySQL
-                  svg(
-                  class="user-skills__item-circle"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
-                .user-skills__item
-                  .user-skills__item-title Node.js & npm
-                  svg(
-                  class="user-skills__item-circle"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
-                .user-skills__item
-                  .user-skills__item-title Mongo.db
-                  svg(
-                  class="user-skills__item-circle"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
 
-          .user-skills__block
-            h2.user-skills__h2 WorkFlow
+          each skill in skills
+            .user-skills__block
+              h2.user-skills__h2= skill.title
               .user-skills__items
-                .user-skills__item
-                  .user-skills__item-title Git
-                  svg(
-                  class="user-skills__item-circle"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
-                .user-skills__item
-                  .user-skills__item-title Gulp
-                  svg(
-                  class="user-skills__item-circle"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
-                .user-skills__item
-                  .user-skills__item-title Bower
-                  svg(
-                  class="user-skills__item-circle"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                    circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)")
+
+                each item in skill.items
+                  .user-skills__item
+                    .user-skills__item-title= item.title
+                    svg(
+                      class="user-skills__item-circle"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100")
+                      circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
+                      circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)" style=`stroke-dasharray: calc(258 * ${item.data}) 258; opacity: ${item.data};`)
 
   include ../parts/map
-
   include ../parts/footer

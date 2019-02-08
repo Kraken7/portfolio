@@ -6,12 +6,7 @@ block title
 block content
   section.section.hiro
 
-    ul.soc-icons.hiro__soc-icons
-      each item in ['vk', 'github', 'in']
-        li.soc-icons__item
-          a(href="#" target='_blank').soc-icons__link
-            svg.soc-icons__icon(width="24" height="24")
-              use(xlink:href=`img/sprite/sprite.svg#${item}`)
+    +soc('hiro__soc-icons')
 
     a(href="#").hiro__hamburger
       svg.hiro__hamburger-icon(width="40" height="40")
@@ -61,14 +56,14 @@ block content
           img.my-works__img(src="userfiles/site-1.png" alt="")
 
         .my-works__prev
-          .my-works__left
+          .my-works__prev-item
             img.my-works__img(src="userfiles/site-2.png" alt="")
             .my-works__bg
             .my-works__img-icon-link
               svg.my-works__img-icon(width="50" height="50")
                 use(xlink:href=`img/sprite/sprite.svg#arrow_down`)
 
-          .my-works__right
+          .my-works__prev-item
             img.my-works__img(src="userfiles/site-3.png" alt="")
             .my-works__bg
             .my-works__img-icon-link
@@ -99,7 +94,7 @@ block content
             p.reviews__item-author-2 — преподаватель
 
       .form-commun.reviews-section__form
-        .title-2.form-commun__title-2 СВЯЗАТЬСЯ СО МНОЙ
+        h2.title-2.form-commun__title-2 СВЯЗАТЬСЯ СО МНОЙ
         form.form-commun__form(action="" method="")
           .form-commun__form-wrap
             input.form-commun__name(type="text" name="name" placeholder="Имя")
@@ -108,6 +103,5 @@ block content
           .form-commun__buttons
               input.form-commun__submit(type="submit" value="Отправить")
               input.form-commun__reset(type="reset" value="Очистить")
-
 
   include ../parts/footer
