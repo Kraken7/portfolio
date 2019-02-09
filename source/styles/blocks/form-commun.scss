@@ -4,6 +4,9 @@
   width: 380px;
   margin: 0 auto;
   overflow: hidden;
+  @include phones{
+    width: 280px;
+  }
 }
 .form-commun__form-wrap{
   padding: 20px;

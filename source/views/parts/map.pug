@@ -1,10 +1,11 @@
 section.section.map
   .wrapper.map_wrap
     .map-block
-      .map-block__title.title-2 Контакты
-      ul.map-block__contacts
-        each item, ndx in {'skype':'skype_kdn','envelope':'astanov@gmail.ru','phone':'+7 931 200 93 24','map_marker':'Новосибирск, ул. Инская, д. 14'}
-          li(class=`map-block__contacts-item`)
-            svg.map-block__icon(width="24" height="24")
-              use(xlink:href=`img/sprite/sprite.svg#${ndx}`)
-            span #{item}
+      .map-block-wrap
+        .map-block__title.title-2 Контакты
+        ul.map-block__contacts
+          each item, ndx in {'skype':'skype_kdn','envelope':'astanov@gmail.ru','phone':'+7 931 200 93 24','map_marker':'Новосибирск, ул. Инская, д. 14'}
+            li(class=`map-block__contacts-item`)
+              svg.map-block__icon(width="24" height="24")
+                use(xlink:href=`img/sprite/sprite.svg#${ndx}`)
+              span #{item}

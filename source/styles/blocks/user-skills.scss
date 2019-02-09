@@ -10,9 +10,16 @@
   font-size: 28px;
   font-weight: 500;
   line-height: 32px;
+  @include laptop{
+    text-align: center;
+  }
 }
 .user-skills__items{
   display: flex;
+  flex-wrap: wrap;
+  @include laptop{
+    justify-content: center;
+  }
 }
 .user-skills__item{
   position: relative;

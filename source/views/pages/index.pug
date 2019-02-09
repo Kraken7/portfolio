@@ -25,15 +25,23 @@ block content
         h1.user__name Владимир Астахов
         p.user__text Личный сайт веб-разработчика
 
+  section.section.sec-triangle
+    .sec-triangle__col
+      svg(
+      viewbox="0 0 1000 200"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_beige about__triangles")
+        polygon(points="0,0 0,200 1000,200")
+    .sec-triangle__col
+      svg(
+      viewbox="0 0 1000 200"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_white about__triangles triangle_mobil_fill_beige")
+        polygon(points="0,200 1000,200 1000,0")
+
   section.section.about
     .wrapper.about__wrap
       .about__col.about__col_beige
-
-        svg(
-          viewbox="0 0 1000 200"
-          preserveAspectRatio="none"
-          class="triangle triangle_fill_beige about__triangles")
-          polygon(points="0,0 0,200 1000,200")
 
         +title('Обо мне', 'about-header.png', 'about__section-title')
 
@@ -47,12 +55,6 @@ block content
             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
 
       .about__col.about__col_white
-
-        svg(
-          viewbox="0 0 1000 200"
-          preserveAspectRatio="none"
-          class="triangle triangle_fill_white about__triangles")
-          polygon(points="0,200 1000,200 1000,0")
 
         .user-data
           .user-data__title.title-2 Чем я могу быть вам полезен

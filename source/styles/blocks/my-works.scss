@@ -8,10 +8,22 @@
     width: 506px;
     height: 165px;
     background: url("../img/works_header.png");
+    background-size: cover;
+    @include tablets{
+      width: 400px;
+      height: 130px;
+    }
+    @include phones{
+      width: 300px;
+      height: 97px;
+    }
   }
 }
 .my-works__wrap{
   display: flex;
+  @include laptop{
+    flex-direction: column;
+  }
 }
 .my-works__col{
   flex: 1;
@@ -22,6 +34,10 @@
 
   &_1{
     background: #ebefe2;
+    padding: 50px 20px;
+    @include laptop{
+      order: 1;
+    }
   }
   &_2{
     background: #e1e4d7;
@@ -48,7 +64,7 @@
   align-items: center;
   text-decoration: none;
   width: max-content;
-  padding: 0 15px;
+  padding: 0 20px;
   height: 45px;
   margin: 0 auto;
   border-radius: 30px;

@@ -1,5 +1,18 @@
 html {
   height: 100%;
+	/*font-size: 16px;
+	@include desktop{
+		font-size: 15px;
+	}
+	@include laptop{
+		font-size: 14px;
+	}
+	@include tablets{
+		font-size: 13px;
+	}
+	@include phones{
+		font-size: 12px;
+	}*/
 }
 
 body {
@@ -36,6 +49,9 @@ textarea{
 	text-align: center;
 	padding: 30px;
 	position: relative;
+	@include phones{
+		font-size: 38px;
+	}
 	&:after{
 		content: '';
 		display: block;
@@ -60,6 +76,9 @@ textarea{
 	text-transform: uppercase;
 	text-align: center;
 	margin-bottom: 20px;
+	@include phones{
+		font-size: 28px;
+	}
 	&:after{
 		content: '';
 		display: block;

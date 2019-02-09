@@ -12,6 +12,9 @@
   color: white;
   font-size: 35px;
   font-weight: 500;
+  @include phones{
+    font-size: 24px;
+  }
 }
 .user__text{
   color: white;
@@ -34,6 +37,9 @@
     height: 3px;
     background: #fff;
     margin: 30px auto;
+  }
+  @include phones{
+    font-size: 48px;
   }
   &:before{
     content: "";

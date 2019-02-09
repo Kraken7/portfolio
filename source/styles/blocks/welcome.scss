@@ -11,13 +11,22 @@
   border-radius: 5px;
   overflow: hidden;
   @include center();
+  @include phones{
+    width: 300px;
+  }
 }
 .welcome__user-block{
   margin-top: 50px;
+  @include phones{
+    margin-top: 30px;
+  }
 }
 .welcome__soc-icons{
   justify-content: center;
   margin: 40px 0;
+  @include phones{
+    margin: 20px 0;
+  }
 }
 .welcome__buttons{
   display: flex;
@@ -42,6 +51,9 @@
     cursor: pointer;
     background-color: #4e8839;
   }
+  @include phones{
+    font-size: 14px;
+  }
 }
 .welcome__login{
   position: absolute;
@@ -61,13 +73,24 @@
     background: #4e8839;
     border-color: #729e19;
   }
+  @include phones{
+    @include center('x');
+    width: max-content;
+  }
 }
 .welcome__copy{
-  @include center('x');
+  position: absolute;
   bottom: 30px;
   color: white;
   font-size: 16px;
   font-weight: 400;
+  width: 100%;
+  text-align: center;
+  @include phones{
+    font-size: 14px;
+    padding: 15px;
+    bottom: 10px;
+  }
 }
 
 
@@ -89,12 +112,19 @@
     margin-top: 20px;
     background: #fff;
   }
+  @include phones{
+    font-size: 28px;
+    margin-top: 10px;
+  }
 }
 .welcome__form{
 
 }
 .welcome__form-wrap{
   padding: 20px;
+  @include phones{
+    padding: 10px;
+  }
 }
 .welcome__form-item{
   position: relative;

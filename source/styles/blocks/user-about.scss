@@ -1,8 +1,12 @@
 .user-about{
   padding: 0 80px 30px 80px;
+  @include phones{
+    padding: 0 0 30px;
+  }
 }
 .user-about__picture{
   width: 100%;
+  max-width: 500px;
   margin: 20px auto;
 }
 .user-about__picture-img{
@@ -18,5 +22,8 @@
   line-height: 24px;
   p{
     margin: 10px 0;
+  }
+  @include phones{
+    padding: 0 10px;
   }
 }

@@ -10,4 +10,11 @@
       fill: $white;
     }
   }
+  &_mobil{
+    &_fill_beige{
+      @include laptop{
+        fill: $beige;
+      }
+    }
+  }
 }

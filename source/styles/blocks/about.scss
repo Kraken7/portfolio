@@ -3,6 +3,9 @@
 }
 .about__wrap{
   display: flex;
+  @include laptop{
+    flex-direction: column;
+  }
 }
 .about__col{
   flex: 1;
@@ -22,8 +25,9 @@
      height: 125px;
      background: url("../img/about_header.png");
      background-size: cover;
+    @include phones{
+      width: 300px;
+      height: 105px;
+    }
    }
-}
-.about__triangles{
-
 }

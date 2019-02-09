@@ -6,6 +6,13 @@
   opacity: 0.85;
   background-color: #373e42;
   display: flex;
+  @include laptop{
+    flex-wrap: wrap;
+  }
+  @include phones{
+    flex-direction: column;
+    text-align: center;
+  }
 }
 .footer__blocks{
   padding: 0 30px;
@@ -15,6 +22,12 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
+  @include laptop{
+    margin: 30px 0 15px;
+  }
+  @include tablets{
+    margin: 20px 0 10px;
+  }
   p{
 
   }
@@ -23,16 +36,47 @@
   }
   &:nth-of-type(1), &:nth-of-type(2){
     border-right: 1px solid rgba(255,255,255,0.2);
+    @include phones{
+      border-right: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
   }
   &_1{
-
+    @include tablets{
+      text-align: center;
+    }
   }
   &_2{
     font-weight: 500;
+    @include tablets{
+      flex: 1.6;
+    }
   }
   &_3{
     opacity: 0.5;
     font-style: italic;
+    @include laptop{
+      width: 100%;
+      flex: unset;
+      margin: 15px 0;
+    }
+    @include phones{
+      width: auto;
+    }
+  }
+  @include desktop{
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @include tablets{
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  @include phones{
+    padding: 10px 0;
+    margin: 0 10px;
   }
 }
 .footer__nav{
@@ -51,7 +95,9 @@
   text-decoration: none;
 }
 .footer__soc{
-
+  @include phones{
+    justify-content: center;
+  }
 }
 .footer__copy{
   padding: 8px;
@@ -62,4 +108,10 @@
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
+  @include tablets{
+    font-size: 13px;
+  }
+  @include phones{
+    line-height: 20px;
+  }
 }

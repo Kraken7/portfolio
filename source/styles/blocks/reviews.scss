@@ -1,12 +1,19 @@
 .reviews{
   display: flex;
   justify-content: center;
+  @include tablets{
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .reviews__item{
   flex: 1;
   max-width: 400px;
   margin: 10px;
   background: url("../img/review.png") no-repeat 0 55px;
+  @include tablets{
+    margin: 20px 10px;
+  }
 }
 .reviews__item-img{
   margin: 0 auto;
@@ -17,6 +24,9 @@
   font-size: 16px;
   font-style: italic;
   line-height: 26px;
+  @include phones{
+    text-align: center;
+  }
   p{
 
   }

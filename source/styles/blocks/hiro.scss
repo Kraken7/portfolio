@@ -16,6 +16,10 @@
   top: 40px;
   right: 40px;
   @include svg-hover();
+  @include phones{
+    top: 10px;
+    right: 10px;
+  }
 }
 .hiro__down-arrow{
   @include center('x');
@@ -28,9 +32,14 @@
 }
 .hiro__user-block{
   @include center();
+  width: max-content;
 }
 .hiro__soc-icons{
   position: absolute;
   top: 40px;
   left: 40px;
+  @include phones{
+    top: 15px;
+    left: 10px;
+  }
 }

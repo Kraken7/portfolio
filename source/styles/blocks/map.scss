@@ -16,6 +16,19 @@
   background-color: #f4f5f0;
   border-radius: 5px;
   margin: auto;
+  @include phones{
+    margin: 0;
+    background-color: #fff;
+    padding: 20px;
+    height: 290px;
+    width: 100%;
+  }
+}
+.map-block-wrap{
+  @include phones {
+    width: 280px;
+    margin: 0 auto;
+  }
 }
 .map-block__title{
 
@@ -31,6 +44,9 @@
   font-weight: 500;
   line-height: 24px;
   display: flex;
+  @include phones{
+    font-size: 14px;
+  }
   svg{
     margin-right: 10px;
     use{
