@@ -1,0 +1,72 @@
+.mobil-menu{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.mobil-menu__part1{
+  position: absolute;
+  background: rgba(#6c9c5a, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 50%;
+  margin-right: 50%;
+  z-index: 2;
+}
+.mobil-menu__part2{
+  position: absolute;
+  background: rgba(#6c9c5a, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: 50%;
+  right: 0;
+  z-index: 2;
+}
+.mobil-menu__list{
+  display: none;
+  color: white;
+  @include sansus();
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 80px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+.mobil-menu__list-item{
+
+}
+.mobil-menu__list-link{
+  width: 100%;
+  transition: all 250ms ease;
+  opacity: 0;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  &:after{
+    content: "";
+    width: 89px;
+    height: 3px;
+    display: block;
+    margin: 0 auto;
+  }
+  &_active{
+    &:after{
+      background-color: #fff;
+    }
+  }
+  &:hover{
+    &:after{
+      background-color: #fff;
+    }
+  }
+}

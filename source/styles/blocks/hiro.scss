@@ -15,7 +15,36 @@
   position: absolute;
   top: 40px;
   right: 40px;
-  @include svg-hover();
+  z-index: 3;
+  svg {
+    overflow: visible;
+    stroke-width: 5;
+    stroke: #fff;
+    line{
+      transition: all .5s ease;
+    }
+    .svg__hamburger-1{
+      transform-origin: left top;
+    }
+    .svg__hamburger-3{
+      transform-origin: left bottom;
+    }
+  }
+  //@include svg-hover(#c4cec2);
+  &:hover{
+    svg {
+      line{
+        stroke: #c4cec2;
+      }
+      .svg__hamburger-1{
+        //transform: translateY(2px) rotate(45deg);
+
+      }
+      .svg__hamburger-3{
+        //transform: translateY(-2px) rotate(-45deg);
+      }
+    }
+  }
   @include phones{
     top: 10px;
     right: 10px;

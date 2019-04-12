@@ -1,0 +1,7 @@
+.mobil-menu
+  .mobil-menu__part1
+  .mobil-menu__part2
+  ul.mobil-menu__list
+    each item, key in {'мои работы':'/work.html', 'блог':'/blog.html', 'обо мне':'/', 'авторизация':'/welcome.html'}
+      li.mobil-menu__list-item
+        a.mobil-menu__list-link(href=`${item}`)=key

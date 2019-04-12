@@ -1,12 +1,22 @@
 .map{
-  background: url("../img/map.png") no-repeat center center;
+  //background: url("../img/map.png") no-repeat center center;
   background-size: cover;
   min-height: 777px;
   padding-bottom: 200px;
+  position: relative;
+  @include laptop{
+    padding-bottom: 223px;
+  }
+  @include phones{
+    padding-bottom: 288px;
+  }
+
 }
 .map_wrap{
   display: flex;
   min-height: 777px;
+  position: absolute;
+  top: 0;
 }
 .map-block{
   width: 380px;
@@ -15,7 +25,7 @@
   opacity: 0.85;
   background-color: #f4f5f0;
   border-radius: 5px;
-  margin: auto;
+  @include center();
   @include phones{
     margin: 0;
     background-color: #fff;

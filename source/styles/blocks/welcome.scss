@@ -4,21 +4,39 @@
   background: url("../img/hiro_bg.png") no-repeat center center;
   background-size: cover;
   position: relative;
+  perspective: 1000px;
 }
 .welcome__canvas{
+  backface-visibility: hidden;
   width: 380px;
+  min-height: 435px;
   background-color: rgba(#122620, 0.6);
   border-radius: 5px;
   overflow: hidden;
+  transition: all 1s ease;
   @include center();
   @include phones{
     width: 300px;
+    min-height: 391px;
   }
+  &_1{
+    transform: translate(-50%,-50%) rotateY(0deg) rotateX(180deg);
+  }
+  &_2{
+    transform: translate(-50%,-50%) rotateY(-180deg);
+  }
+}
+.welcome__canvas-1{
+  overflow: hidden;
+}
+.welcome__canvas-2{
+  overflow: hidden;
 }
 .welcome__user-block{
   margin-top: 50px;
   @include phones{
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
 .welcome__soc-icons{
@@ -96,7 +114,7 @@
 
 .welcome__title{
   color: white;
-  margin-top: 20px;
+  margin-top: 28px;
   @include sansus();
   font-size: 32px;
   font-weight: 400;
@@ -145,6 +163,22 @@
       fill: #C6CCCE;
     }
   }
+  &_success{
+    background: #6c9c5a;
+    svg{
+      use{
+        fill: #fff;
+      }
+    }
+  }
+  &_error{
+    background: #ff6666;
+    svg{
+      use{
+        fill: #fff;
+      }
+    }
+  }
 }
 .welcome__form-input{
   width: 100%;
@@ -167,27 +201,17 @@
   margin: 10px 0;
 }
 .welcome__form-capcha-checkbox{
+  cursor: pointer;
   width: 20px;
   height: 20px;
   background-color: #fff;
   border-radius: 2px;
-  &_active{
-    background-color: #6c9c5a;
-    &:after{
-      content: "";
-      width: 12px;
-      height: 9px;
-      display: block;
-      background: url("../img/check.svg");
-      background-size: cover;
-      margin: 5.5px 4.5px;
-    }
-  }
 }
 .welcome__form-capcha-checkbox-input{
   display: none;
 }
 .welcome__form-capcha-p{
+  cursor: pointer;
   opacity: 0.8;
   color: white;
   font-size: 16px;
@@ -215,22 +239,43 @@
   margin: 0 15px;
 }
 .welcome__form-capcha-radio{
+  cursor: pointer;
   width: 20px;
   height: 20px;
   background-color: #fff;
   border-radius: 50%;
-  &_active{
-    &:after{
-      content: "";
-      display: block;
-      background-color: #6c9c5a;
-      width: 8px;
-      height: 8px;
-      margin: 6px;
-      border-radius: 50%;
-    }
-  }
 }
 .welcome__form-capcha-radio-input{
   display: none;
+}
+.welcome__form-capcha{
+  .welcome__form-capcha-label{
+    &_active{
+      background-color: #6c9c5a;
+      &:after{
+        content: "";
+        width: 12px;
+        height: 9px;
+        display: block;
+        background: url("../img/check.svg");
+        background-size: cover;
+        margin: 5.5px 4.5px;
+      }
+    }
+  }
+}
+.welcome__form-capcha-2{
+  .welcome__form-capcha-label{
+    &_active{
+      &:after{
+        content: "";
+        display: block;
+        background-color: #6c9c5a;
+        width: 8px;
+        height: 8px;
+        margin: 6px;
+        border-radius: 50%;
+      }
+    }
+  }
 }

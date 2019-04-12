@@ -6,12 +6,15 @@
   opacity: 0.85;
   background-color: #373e42;
   display: flex;
+  min-height: 160px;
   @include laptop{
     flex-wrap: wrap;
+    min-height: 184px;
   }
   @include phones{
     flex-direction: column;
     text-align: center;
+    min-height: 233px;
   }
 }
 .footer__blocks{
@@ -66,7 +69,7 @@
   }
   @include desktop{
     padding: 0 15px;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 20px;
   }
   @include tablets{
@@ -113,5 +116,6 @@
   }
   @include phones{
     line-height: 20px;
+    min-height: 56px;
   }
 }

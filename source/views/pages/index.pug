@@ -4,13 +4,17 @@ block title
     | Главная Страница
 
 block content
-  section.section.hiro
+  section.section.hiro.paralax-bg
 
     +soc('hiro__soc-icons')
 
     a(href="#").hiro__hamburger
       svg.hiro__hamburger-icon(width="40" height="40")
-        use(xlink:href=`img/sprite/sprite.svg#hamburger`)
+        //use(xlink:href=`img/sprite/sprite.svg#hamburger`)
+        g(viewBox="0 0 40 35" id="hamburger")
+          line(class="svg__hamburger-1" x1="0" y1="3" x2="40" y2="3")
+          line(class="svg__hamburger-2" x1="0" y1="17.5" x2="40" y2="17.5")
+          line(class="svg__hamburger-3" x1="0" y1="32" x2="40" y2="32")
 
     .hiro__bg
       img.hiro__bg-img(src='../img/portfolio_header.png' alt='')
@@ -21,7 +25,7 @@ block content
 
     .user.hiro__user-block
       .user__block
-        img.user__avatar(src="img/user.png", alt="")
+        img.user__avatar(src="img/user.png" alt="" srcset="img/user@2.png 2x")
         h1.user__name Владимир Астахов
         p.user__text Личный сайт веб-разработчика
 
@@ -47,7 +51,7 @@ block content
 
         .user-about
           .user-about__picture
-            img(src="img/man.png" alt="").user-about__picture-img
+            img(src="img/man.png" alt="" srcset="img/man@2.png 2x").user-about__picture-img
           .user-about__title.title-2
             | Кто я
           .user-about__text
@@ -77,7 +81,8 @@ block content
                       height="100"
                       viewBox="0 0 100 100")
                       circle(cx="50" cy="50" r="41" class="user-skills__circle-empty")
-                      circle(cx="50" cy="50" r="41" class="user-skills__circle-full" transform="rotate(-90 50 50)" style=`stroke-dasharray: calc(258 * ${item.data}) 258; opacity: ${item.data};`)
+                      circle(cx="50" cy="50" r="41" class="user-skills__circle-full" data-p=`${item.data}` data-stop="0" transform="rotate(-90 50 50)" style=`stroke-dasharray: calc(258 * 0) 258; opacity: 0;`)
 
   include ../parts/map
+  include ../parts/mobil-menu
   include ../parts/footer

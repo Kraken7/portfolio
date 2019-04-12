@@ -26,6 +26,14 @@
   font-size: 16px;
   font-weight: 400;
 }
+.form-commun{
+  &_success{
+    border: 2px solid #6c9c5a;
+  }
+  &_error{
+    border: 2px solid #ff6666;
+  }
+}
 .form-commun__name, .form-commun__email{
   height: 45px;
   border-radius: 50px;

@@ -4,13 +4,17 @@ block title
   | Мои работы
 
 block content
-  section.section.hiro
+  section.section.hiro.paralax-bg
 
     +soc('hiro__soc-icons')
 
     a(href="#").hiro__hamburger
       svg.hiro__hamburger-icon(width="40" height="40")
-        use(xlink:href=`img/sprite/sprite.svg#hamburger`)
+        //use(xlink:href=`img/sprite/sprite.svg#hamburger`)
+        g(viewBox="0 0 40 35" id="hamburger")
+        line(class="svg__hamburger-1" x1="0" y1="3" x2="40" y2="3")
+        line(class="svg__hamburger-2" x1="0" y1="17.5" x2="40" y2="17.5")
+        line(class="svg__hamburger-3" x1="0" y1="32" x2="40" y2="32")
 
     .hiro__bg
       img.hiro__bg-img(src='../img/portfolio_header.png' alt='')
@@ -21,7 +25,7 @@ block content
 
     .user.hiro__user-block
       .user__block
-        img.user__avatar(src="img/user.png", alt="")
+        img.user__avatar(src="img/user.png", alt="", srcset="img/user@2.png 2x")
         h1.user__name Владимир Астахов
         p.user__text Личный сайт веб-разработчика
 
@@ -78,7 +82,7 @@ block content
       h2.title.reviews-section__title Что обо мне говорят
       .reviews.reviews-section__list
         .reviews__item
-          img.reviews__item-img(src="img/rev-1.png" alt="")
+          img.reviews__item-img(src="img/rev-1.png" alt="" srcset="img/rev-1@2.png 2x")
           .reviews__item-content
             p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
           .reviews__item-author
@@ -86,7 +90,7 @@ block content
             p.reviews__item-author-2 — основатель Loftschool
 
         .reviews__item
-          img.reviews__item-img(src="img/rev-2.png" alt="")
+          img.reviews__item-img(src="img/rev-2.png" alt="" srcset="img/rev-2@2.png 2x")
           .reviews__item-content
             p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
           .reviews__item-author
@@ -97,11 +101,14 @@ block content
         h2.title-2.form-commun__title-2 СВЯЗАТЬСЯ СО МНОЙ
         form.form-commun__form(action="" method="")
           .form-commun__form-wrap
-            input.form-commun__name(type="text" name="name" placeholder="Имя")
-            input.form-commun__email(type="email" name="email" placeholder="Email")
-            textarea.form-commun__text(name="text" placeholder='Ваше сообщение')
+            input.form-commun__name.form-commun__input(type="text" name="name" placeholder="Имя")
+            input.form-commun__email.form-commun__input(type="email" name="email" placeholder="Email")
+            textarea.form-commun__text.form-commun__input(name="text" placeholder='Ваше сообщение')
           .form-commun__buttons
               input.form-commun__submit(type="submit" value="Отправить")
               input.form-commun__reset(type="reset" value="Очистить")
 
+
+  include ../parts/thank
+  include ../parts/mobil-menu
   include ../parts/footer

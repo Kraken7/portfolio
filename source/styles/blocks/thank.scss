@@ -1,0 +1,13 @@
+.thank{
+  width: 500px;
+  height: 300px;
+  color: #fff;
+  padding: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: rgba(18,38,32,.6);
+  @include center();
+  position: fixed;
+}

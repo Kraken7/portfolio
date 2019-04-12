@@ -5,22 +5,21 @@ block title
 
 block content
   section.section.welcome
-    .welcome__canvas
-      .welcome__canvas-1
+    .welcome__canvas.welcome__canvas_1
         .user.welcome__user-block
           .user__block
-            img.user__avatar(src="img/user.png", alt="")
+            img.user__avatar(src="img/user.png", alt="", srcset="img/user@2.png 2x")
             h1.user__name Владимир Астахов
             p.user__text Личный сайт веб-разработчика
 
         +soc('welcome__soc-icons')
 
         .welcome__buttons
-          a.welcome__btn(href="#") Мои работы
-          a.welcome__btn(href="#") Обо мне
-          a.welcome__btn(href="#") Блог
+          a.welcome__btn(href="/work.html") Мои работы
+          a.welcome__btn(href="/") Обо мне
+          a.welcome__btn(href="/blog.html") Блог
 
-      .welcome__canvas-2(style="display: none;")
+    .welcome__canvas.welcome__canvas_2
         h1.welcome__title АВТОРИЗУЙТЕСЬ
         form.welcome__form(action="" method="")
           .welcome__form-wrap
@@ -36,19 +35,19 @@ block content
               input.welcome__form-input(type="password" name="pass" placeholder="Пароль")
 
             .welcome__form-capcha
-              .welcome__form-capcha-checkbox.welcome__form-capcha-checkbox_active
+              .welcome__form-capcha-checkbox.welcome__form-capcha-label
               input.welcome__form-capcha-checkbox-input(type="checkbox" name="capcha-1" value="1")
               p.welcome__form-capcha-p Я человек
 
             .welcome__form-p Вы точно не робот?
             .welcome__form-capcha-2
               .welcome__form-capcha-radio-block
-                .welcome__form-capcha-radio.welcome__form-capcha-radio_active
+                .welcome__form-capcha-radio.welcome__form-capcha-label
                 input.welcome__form-capcha-radio-input(type="radio" name="capcha-2" value="1")
-                p.welcome__form-capcha-p.welcome__form-capcha-p_active Да
+                p.welcome__form-capcha-p Да
               .welcome__form-capcha-radio-block
-                .welcome__form-capcha-radio
-                input.welcome__form-capcha-radio-input(type="radio" name="capcha-2" value="0")
+                .welcome__form-capcha-radio.welcome__form-capcha-label
+                input.welcome__form-capcha-radio-input(type="radio" name="capcha-2" value="")
                 p.welcome__form-capcha-p Не уверен
 
           .welcome__buttons
@@ -59,3 +58,6 @@ block content
 
     .welcome__copy
       | © Владимир Астахов | создано с любовью в LoftSchool | 2016
+
+  script(src="js/foundation.js")
+  script(src="js/app.js")

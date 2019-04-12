@@ -1,0 +1,59 @@
+.blog-mobil-menu{
+  position: fixed;
+  width: 500px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #6c9c5a;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  margin-left: -500px;
+  transition: all 500ms ease;
+  &_hover{
+    &:hover{
+      transform: translateX(14px);
+    }
+  }
+  @include laptop{
+    display: flex;
+  }
+  @include tablets{
+    width: 90%;
+    margin-left: -90%;
+  }
+}
+.blog-mobil-menu__list{
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: right;
+  padding: 20px;
+  @include phones{
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+.blog-mobil-menu__item{
+  padding: 10px 0;
+}
+.blog-mobil-menu__link{
+  color: #fff;
+  text-decoration: none;
+  opacity: .7;
+  &_active{
+    opacity: 1;
+  }
+  &:hover{
+    opacity: 1;
+  }
+}
+.blog-mobil-menu__go{
+  background: url(../img/swipe.png) center right no-repeat;
+  width: 28px;
+  height: 100%;
+  position: absolute;
+  right: -13px;
+  cursor: pointer;
+}
