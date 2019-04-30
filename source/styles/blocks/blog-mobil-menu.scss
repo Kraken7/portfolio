@@ -1,6 +1,6 @@
 .blog-mobil-menu{
   position: fixed;
-  width: 500px;
+  width: 380px;
   height: 100%;
   left: 0;
   top: 0;
@@ -9,7 +9,7 @@
   z-index: 1;
   display: none;
   align-items: center;
-  margin-left: -500px;
+  margin-left: -380px;
   transition: all 500ms ease;
   &_hover{
     &:hover{
@@ -19,20 +19,21 @@
   @include laptop{
     display: flex;
   }
-  @include tablets{
-    width: 90%;
-    margin-left: -90%;
+  @include phones{
+    width: 80%;
+    margin-left: -80%;
   }
 }
 .blog-mobil-menu__list{
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 36px;
+  line-height: 26px;
   text-align: right;
-  padding: 20px;
+  padding: 40px;
   @include phones{
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 20px;
   }
 }
 .blog-mobil-menu__item{

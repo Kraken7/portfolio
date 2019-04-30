@@ -60,7 +60,6 @@
                        link = $(this).find('a.blog-mobil-menu__link'),
                        d = link.attr('href').substr(1);
                    if(y >= d-300){
-                       console.log(y, d);
                        $('.blog-mobil-menu__link').removeClass('blog-mobil-menu__link_active');
                        link.addClass('blog-mobil-menu__link_active');
                        return false;
@@ -410,7 +409,7 @@
        }
    }());
 
-   this.portfolio = (function(){
+   var portfolio = (function(){
 
        return {
            'init': function () {
@@ -470,6 +469,7 @@
        }
    }())
 
+
 $(document).ready(function () {
     if($("body").find(".hiro__down-arrow").length) downArrow.init();
     if($("body").find(".blog__sidebar").length) navBlog.init();
@@ -480,4 +480,5 @@ $(document).ready(function () {
     if($("body").find(".my-works").length) portfolio.init();
     if($("body").find(".welcome").length) welcome.init();
     paralax.init();
+
 });
