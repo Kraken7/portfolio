@@ -94,10 +94,17 @@
 .my-works__prev-item{
   flex: 1;
   position: relative;
-  @include svg-hover(#c4cec2);
+  @include svg-hover(#6c9c5a);
 }
-.my-works__img{
+.my-works__img {
   width: 100%;
+}
+.my-works__main-img{
+  width: 100%;
+  display: none;
+  &_active{
+    display: block;
+  }
 }
 .my-works__bg{
   background: #b0b7aa;

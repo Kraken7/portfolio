@@ -48,27 +48,33 @@ block content
     .my-works__wrap
       .my-works__col.my-works__col_1
         .my-works__desk
-          h3.title-2.my-works__title-2 Сайт школы онлайн Образования
-          p.my-works__teh HTML, CSS, JAVASCRIPT
-          a.my-works__link(href="" target="_blank")
+          h3.title-2.my-works__title-2 Сайт школы онлайн Образования 1
+          p.my-works__teh HTML, CSS, JAVASCRIPT 1
+          a.my-works__link(href="#1" target="_blank")
             svg.my-works__link-icon(width="20" height="20")
               use(xlink:href=`img/sprite/sprite.svg#link`)
             p.my-works__link-p Посмотреть сайт
 
       .my-works__col.my-works__col_2
         .my-works__main
-          img.my-works__img(src="userfiles/site-1.png" alt="")
+          img.my-works__main-img.my-works__main-img_active(src="userfiles/site-0.png" alt="")
+          img.my-works__main-img(src="userfiles/site-1.png" alt="")
+          img.my-works__main-img(src="userfiles/site-2.png" alt="")
+          img.my-works__main-img(src="userfiles/site-3.png" alt="")
+          img.my-works__main-img(src="userfiles/site-4.png" alt="")
+          img.my-works__main-img(src="userfiles/site-5.png" alt="")
+          img.my-works__main-img(src="userfiles/site-6.png" alt="")
 
         .my-works__prev
-          .my-works__prev-item
-            img.my-works__img(src="userfiles/site-2.png" alt="")
+          .my-works__prev-item.my-works__prev-item_down
+            img.my-works__img.my-works__img_prev(src="userfiles/site-6.png" alt="")
             .my-works__bg
             .my-works__img-icon-link
               svg.my-works__img-icon(width="50" height="50")
                 use(xlink:href=`img/sprite/sprite.svg#arrow_down`)
 
-          .my-works__prev-item
-            img.my-works__img(src="userfiles/site-3.png" alt="")
+          .my-works__prev-item.my-works__prev-item_up
+            img.my-works__img.my-works__img_next(src="userfiles/site-1.png" alt="")
             .my-works__bg
             .my-works__img-icon-link
               svg.my-works__img-icon(width="50" height="50" style="transform: rotate(180deg);")

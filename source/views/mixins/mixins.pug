@@ -9,6 +9,12 @@ mixin soc (additionClass)
           svg.soc-icons__icon(width="24" height="24")
             use(xlink:href=`img/sprite/sprite.svg#${item}`)
 
+mixin preloader ()
+  .preloader
+    .preloader__spinner
+      .preloader__animation
+      .preloader__percents 0%
+
 -
   var skills = [
     {

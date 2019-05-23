@@ -6,6 +6,7 @@
                    e.preventDefault();
                    var y = $('.hiro').height();
                    $('html, body').animate({scrollTop: y}, 1000);
+                   //$("body").mCustomScrollbar("scrollTo",y+"px");
                })
            }
        }
@@ -30,6 +31,7 @@
                e.preventDefault();
                var y = $(this).attr('href').substr(1);
                $('html, body').animate({scrollTop: y}, 1000);
+               //$("body").mCustomScrollbar("scrollTo",y+"px");
                navMobilBack();
            });
        }
@@ -410,12 +412,103 @@
    }());
 
    var portfolio = (function(){
+     var counter = 0,
+       next = 0,
+       prev = 0,
+       duration = 300,
+       inProcess = false;
 
-       return {
-           'init': function () {
+     var moveSlide = function(){
+       var items = $('.my-works__main-img'),
+         activeItem = items.filter('.my-works__main-img_active');
 
-           }
+       if (counter >= items.length) counter = 0;
+       if (counter < 0) counter = items.length - 1;
+
+       var reqItem = items.eq(counter);
+
+       activeItem.fadeOut(duration, function () {
+         items.removeClass('my-works__main-img_active');
+         reqItem.fadeIn(duration).addClass('my-works__main-img_active');
+         inProcess = false;
+         next = counter + 1;
+         prev = counter - 1;
+         if(next >= items.length) next = 0;
+         if(prev < 0) prev = items.length - 1;
+         $('.my-works__img_prev').attr('src','userfiles/site-'+prev+'.png');
+         $('.my-works__img_next').attr('src','userfiles/site-'+next+'.png');
+         moveText(counter);
+       });
+     }
+
+     var moveText = function (counter) {
+       var title, text, link;
+       switch (counter){
+         case 0:
+           title = "Сайт школы онлайн Образования 1";
+           text = "HTML, CSS, JAVASCRIPT 1";
+           link = "#1";
+           break;
+         case 1:
+           title = "Сайт школы онлайн Образования 2";
+           text = "HTML, CSS, JAVASCRIPT 2";
+           link = "#2";
+           break;
+         case 2:
+           title = "Сайт школы онлайн Образования 3";
+           text = "HTML, CSS, JAVASCRIPT 3";
+           link = "#3";
+           break;
+         case 3:
+           title = "Сайт школы онлайн Образования 4";
+           text = "HTML, CSS, JAVASCRIPT 4";
+           link = "#4";
+           break;
+         case 4:
+           title = "Сайт школы онлайн Образования 5";
+           text = "HTML, CSS, JAVASCRIPT 5";
+           link = "#5";
+           break;
+         case 5:
+           title = "Сайт школы онлайн Образования 6";
+           text = "HTML, CSS, JAVASCRIPT 6";
+           link = "#6";
+           break;
+         case 6:
+           title = "Сайт школы онлайн Образования 7";
+           text = "HTML, CSS, JAVASCRIPT 7";
+           link = "#7";
+           break;
+         default:
+           title = "Сайт школы онлайн Образования 1";
+           text = "HTML, CSS, JAVASCRIPT 1";
+           link = "#1";
        }
+       $('.my-works__title-2').text(title);
+       $('.my-works__teh').text(text);
+       $('.my-works__link').attr('href',link);
+     }
+
+     return {
+       init: function(){
+         $('.my-works__prev-item_down').on('click', function (e) {
+           e.preventDefault();
+           if (!inProcess) {
+             inProcess = true;
+             counter--;
+             moveSlide();
+           }
+         });
+         $('.my-works__prev-item_up').on('click', function (e) {
+           e.preventDefault();
+           if (!inProcess) {
+             inProcess = true;
+             counter++;
+             moveSlide();
+           }
+         });
+       }
+     }
    }())
 
    this.welcome = (function(){
@@ -469,8 +562,64 @@
        }
    }())
 
+   var preloader = (function () {
+     var percentsTotal = 0,
+       preloader = $('.preloader');
+
+     var imgPath = $('*').map(function (ndx, element) {
+       var background = $(element).css('background-image'),
+         img = $(element).is('img'),
+         path = '';
+
+       if (background != 'none') {
+         path = background.replace('url("', '').replace('")', '');
+       }
+       if (img) {
+         path = $(element).attr('src');
+       }
+       if (path) return path;
+     });
+
+     var setPercents = function (total, current) {
+       var persents = Math.ceil(current / total * 100);
+
+       $('.preloader__percents').text(persents + '%');
+
+       if (persents >= 100) {
+         preloader.fadeOut();
+       }
+     }
+
+     var loadImages = function (images) {
+
+       if (!images.length) preloader.fadeOut();
+
+       images.forEach(function (img, i, images) {
+         var fakeImage = $('<img>', {
+           attr: {
+             src: img
+           }
+         });
+
+         fakeImage.on('load error', function () {
+           percentsTotal++;
+           setPercents(images.length, percentsTotal);
+         });
+       });
+     }
+
+     return {
+       init: function () {
+         var imgs = imgPath.toArray();
+
+         loadImages(imgs);
+       }
+     }
+   }());
+
 
 $(document).ready(function () {
+    preloader.init();
     if($("body").find(".hiro__down-arrow").length) downArrow.init();
     if($("body").find(".blog__sidebar").length) navBlog.init();
     if($("body").find(".user-skills__item").length) skillsAnimate.init();
@@ -480,5 +629,15 @@ $(document).ready(function () {
     if($("body").find(".my-works").length) portfolio.init();
     if($("body").find(".welcome").length) welcome.init();
     paralax.init();
+
+/*    $("body").mCustomScrollbar({
+      theme:"minimal",
+      callbacks:{
+        onScroll:function(){
+          y = parseInt(this.mcs.top) * -1;
+          console.log(y);
+        }
+      }
+    });*/
 
 });
