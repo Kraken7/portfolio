@@ -51,7 +51,7 @@ $.gulp.task('default', $.gulp.series(
 $.gulp.task('prod', $.gulp.series(
   'clean-zip',
   'build',
-  //'tinypng',
+  'tinypng',
   'zip',
   //'sftp',
   'size'

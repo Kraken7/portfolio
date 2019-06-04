@@ -3,11 +3,11 @@ mixin title (title, url, additionClass)
 
 mixin soc (additionClass)
   ul.soc-icons(class=additionClass)
-    each item in ['vk', 'github', 'in']
+    each item in [{title:'vk', link:'https://vk.com/id156483708'}, {title:'telegram_logo', link:'https://msng.link/tg/alexenuk'}, {title:'whatsapp', link:'https://msng.link/wa/79321163496'}]
       li.soc-icons__item
-        a(href="#" target='_blank').soc-icons__link
+        a(href=`${item.link}` target='_blank').soc-icons__link
           svg.soc-icons__icon(width="24" height="24")
-            use(xlink:href=`img/sprite/sprite.svg#${item}`)
+            use(xlink:href=`img/sprite/sprite.svg#${item.title}`)
 
 mixin preloader ()
   .preloader
@@ -19,14 +19,14 @@ mixin preloader ()
   var skills = [
     {
       title: 'Frontend',
-      items: [{title:'HTML5',data:'0.5'},{title:'CSS3',data:'0.8'},{title:'JavaScript & jQuery',data:'0.4'}]
+      items: [{title:'HTML5',data:'0.95'},{title:'CSS3',data:'0.85'},{title:'JavaScript & jQuery',data:'0.7'},{title:'Pug',data:'0.8'},{title:'Sass',data:'0.65'}]
     },
     {
       title: 'Backend',
-      items: [{title:'PHP',data:'0.3'},{title:'mySQL',data:'0.75'},{title:'Node.js & npm',data:'0.6'},{title:'Mongo.db',data:'0.7'}]
+      items: [{title:'PHP',data:'0.75'},{title:'SQL',data:'0.75'},{title:'Yii2',data:'0.55'},{title:'Node.js & npm',data:'0.45'},{title:'Mongo.db',data:'0.75'}]
     },
     {
       title: 'WorkFlow',
-      items: [{title:'Git',data:'0.45'},{title:'Gulp',data:'0.65'},{title:'Bower',data:'0.2'}]
+      items: [{title:'Git',data:'0.8'},{title:'Gulp',data:'0.8'},{title:'Bower',data:'0.9'}]
     }
   ]

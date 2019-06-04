@@ -445,44 +445,54 @@
        var title, text, link;
        switch (counter){
          case 0:
-           title = "Сайт школы онлайн Образования 1";
-           text = "HTML, CSS, JAVASCRIPT 1";
-           link = "#1";
+           title = "Zetlab";
+           text = "Высокоточные измерительные оборудования";
+           link = "https://zetlab.com";
            break;
          case 1:
-           title = "Сайт школы онлайн Образования 2";
-           text = "HTML, CSS, JAVASCRIPT 2";
-           link = "#2";
+           title = "Фигурки топиари";
+           text = "Ландшафтные, зеленые фигуры из искусственной травы";
+           link = "https://xn--80apbvfij.xn--p1ai";
            break;
          case 2:
-           title = "Сайт школы онлайн Образования 3";
-           text = "HTML, CSS, JAVASCRIPT 3";
-           link = "#3";
+           title = "Restorator Project";
+           text = "Сайт для ресторана";
+           link = "http://www.restorator-pro.ru";
            break;
          case 3:
-           title = "Сайт школы онлайн Образования 4";
-           text = "HTML, CSS, JAVASCRIPT 4";
-           link = "#4";
+           title = "Атлант";
+           text = "Оптовые поставки крепежа";
+           link = "http://atlantkrep.ru";
            break;
          case 4:
-           title = "Сайт школы онлайн Образования 5";
-           text = "HTML, CSS, JAVASCRIPT 5";
-           link = "#5";
+           title = "Мебель на заказ";
+           text = "";
+           link = "http://mebel-mone.ru";
            break;
          case 5:
-           title = "Сайт школы онлайн Образования 6";
-           text = "HTML, CSS, JAVASCRIPT 6";
-           link = "#6";
+           title = "Data Visualization";
+           text = "Визуализация данных";
+           link = "http://www.data-vis.ru";
            break;
          case 6:
-           title = "Сайт школы онлайн Образования 7";
-           text = "HTML, CSS, JAVASCRIPT 7";
-           link = "#7";
+           title = "Пекарня Лакомов";
+           text = "Интернет магазин";
+           link = "http://lacomov.ru";
+           break;
+         case 7:
+           title = "Госхелпер";
+           text = "Помощь студентам";
+           link = "https://goshelper.ru";
+           break;
+         case 8:
+           title = "Личный сайт фотографа";
+           text = "Портфолио";
+           link = "http://www.kseniaphoto.ru";
            break;
          default:
-           title = "Сайт школы онлайн Образования 1";
-           text = "HTML, CSS, JAVASCRIPT 1";
-           link = "#1";
+           title = "Zetlab";
+           text = "Высокоточные измерительные оборудования";
+           link = "https://zetlab.com";
        }
        $('.my-works__title-2').text(title);
        $('.my-works__teh').text(text);
